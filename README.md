@@ -86,8 +86,8 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
     cassandra-1   1/1     Running   0          80m
    
     As can be seen we are back to 2 pods, cassandra-2 has been deleted, below is the persistent disks and as can be seen cassandra-2 is still present<br/> 
-    pvc-6f1047eb-485d-4390-8b65-b54382a248bc   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-0   fast                   
-    pvc-cc6578f7-b09e-4db3-aabb-d7a8a1919ebd   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-2   fast                       pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast                 
+    pvc-6f1047eb-485d-4390-8b65-b54382a248bc   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-0   fast<br/>               
+    pvc-cc6578f7-b09e-4db3-aabb-d7a8a1919ebd   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-2   fast<br/>                   pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast<br/>                 
 
 # Conclusion
 There are many improvements required to make thsi more "production ready":
