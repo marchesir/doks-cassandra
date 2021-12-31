@@ -1,7 +1,7 @@
 # Overview
 DOKS (DigitalOcean K8s) based Cassandra Cluster as part of the DO (DigitalOcean) K8s challenge (https://www.digitalocean.com/community/pages/kubernetes-challenge).  
 
-# Implmentation
+# Implementation
 To provide scalable HA (High Availability) Cassndra noSQL K8s based the following componemnts are required:
 1. DOCKS Cluster
    a. defaut cluster with 3 nodes;
