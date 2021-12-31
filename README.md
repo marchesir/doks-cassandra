@@ -54,7 +54,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    cassandra-1   1/1     Running   0          7m14s<br/>
    5. If desired the Cassandra raw logs can be tailed as such per pod:<br/>
    kubectl logs -f cassandra-0
-9. Verify Cassandra Cluster (DC/Ring) is by running following command on any Cassandra Node/Pod:<br/>
+9. Verify Cassandra Cluster (DC/Ring) is running with following command on any Cassandra Node/Pod:<br/>
    kubectl exec -it cassandra-0 -- nodetool status    
    Datacenter: DC1-Cassandra1<br/>
    ==========================<br/>
