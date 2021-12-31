@@ -8,8 +8,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    b. Minimum of 4GB RAM and 2 CPU per node otherwise Cassandra fails to startup due to limit settings;<br>
 3. K8s statefulset (https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) required so state is mainted;
 4. K8s service with ClusterIP set to None required for DNS lookup within cluster for Cassandra;
-5. K8s StorageClass with volumeBindingMode set to WaitForFirstConsumer needed for dynamic persistent storage used to map Cassandra data which guarantees      
-   data will be preserved when any scaling up/down;
+5. K8s StorageClass with volumeBindingMode set to WaitForFirstConsumer needed for dynamic persistent storage used to map Cassandra data which guarantees data will be preserved when scaling up/down;
 
 # Setup
 1. Following default environment vars are set which can be overriden if needed:
