@@ -2,7 +2,7 @@
 DOKS (DigitalOcean K8s) based Cassandra Cluster as part of the DO (DigitalOcean) K8s challenge (https://www.digitalocean.com/community/pages/kubernetes-challenge).  
 
 # Implementation
-To provide scalable HA (High Availability) Cassndra noSQL K8s based the following componemnts are required:
+To provide scalable HA (High Availability) Cassndra NoSQL K8s based the following components are required:
 1. DOCKS Cluster
    a. defaut cluster with 3 nodes;
    b. minimum of 4GB RAM and 2 CPU per node otherwise Cassandra fails to startup dur to limit settings;
