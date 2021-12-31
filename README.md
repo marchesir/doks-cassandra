@@ -62,12 +62,12 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    |/ State=Normal/Leaving/Joining/Moving<br/>
    --  Address       Load       Tokens       Owns (effective)  Host ID                               Rack<br/>
    UN  10.244.0.85   65.81 KiB  32           100.0%            0d8fedd1-ee5a-49b4-9ffa-0a0efcd291ac  Rack1-Cassandra1<br/>
-   UN  10.244.1.235  104.55 KiB 32           100.0%            b7b22f5b-f549-4f05-9c44-db9df44cd52c  Rack1-Cassandra1
+   UN  10.244.1.235  104.55 KiB 32           100.0%            b7b22f5b-f549-4f05-9c44-db9df44cd52c  Rack1-Cassandra1<br/>
  
    This shows all is up and running.
 10. Verify each pod has its persistent storage created with kubectl get pv:<br/>
     pvc-6f1047eb-485d-4390-8b65-b54382a248bc   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-0   fast<br/>               
-    pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast<br/>                   
+    pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast                  
     As can be seen 2 1Gi persistent storage disks have been created per Pod.
 10. Test scaling with the following command to go from 2 pods to 3:<br/>
     kubectl scale statefulsets cassandra --replicas=3
