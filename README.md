@@ -28,7 +28,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    cassandra   ClusterIP   None         <none>        9042/TCP   43s<br/>
    Note: CLUSTER_IP and EXTERNAL_IP are all empty as this serivice is needed for DNS loopkup by Cassandra.
 6. This step is very important as we need to create new SotrageClass and patch it so it becomes the default:
-   1. Create storageclass fast with kubectl apply -f st.yml and verify all storageclasses with kubectl get sc:<br/>
+   1. Create SotrageClass fast with kubectl apply -f st.yml and verify all SotrageClass with kubectl get sc:<br/>
       do-block-storage (default)   dobs.csi.digitalocean.com   Delete          Immediate              true                   16m<br/>
       fast                         dobs.csi.digitalocean.com   Delete          WaitForFirstConsumer   true                   23s<br/>
    
@@ -36,7 +36,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    2. To make fast the default run the following 2 commands:<br/>
       kubectl patch storageclass do-block-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'<br/>
       kubectl patch storageclass fast -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'<br/>
-   3. Verify the fast storageclass is now default with kubectl get sc:<br/>
+   3. Verify the fast SotrageClass is now default with kubectl get sc:<br/>
     do-block-storage   dobs.csi.digitalocean.com   Delete          Immediate              true                   20m<br/>
     fast (default)     dobs.csi.digitalocean.com   Delete          WaitForFirstConsumer   true                   5m2s<br/>
 7. Now all components are installed leaving the Cassandra statefulset which includes the following: 
@@ -85,6 +85,7 @@ There are many improvements required to make thsi more "production ready":
 4. Create custom Dockerfile to better fit needs;
 5. Fix health check error "readiness probe failed" by understanding why Cassandra causes K8s to fail and add maybe CRD or simular;
 6. Package all via helm or even kustomize;
+7. Add routing vai ingress or simular so Cassandra can be accessed externally with sifficent firewall rules or/and ingress/egress rules;
    
    
    
