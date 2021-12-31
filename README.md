@@ -1,6 +1,6 @@
 # Overview
-DOKS (DigitalOcean K8s) based Cassandra Cluster as part of the DO (DigitalOcean) K8s challenge (https://www.digitalocean.com/community/pages/kubernetes-challenge).  
-Project Name: doks-cassandra
+DOKS (DigitalOcean K8s) based Cassandra Cluster as part of the DO (DigitalOcean) K8s challenge (https://www.digitalocean.com/community/pages/kubernetes-challenge).<br/>  
+Project Name: doks-cassandra<br/>
 Repo: https://github.com/marchesir/doks-cassandra
 
 # Implementation
