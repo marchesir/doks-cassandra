@@ -77,7 +77,14 @@ To provide scalable HA (High Availability) Cassndra noSQL K8s based the followin
    
     finally rerun scale command and set back to 2 and Pods will be reduced back to 2, in this case Cassandra will drain the data from the dieing Pod and push it     to the remianing live Pods.  Running kubectl get pv shows the persistent storage of the dead Pod is still present.
 
-   
+# Conclusion
+There are many improvements required to make thsi more "production ready":
+1. Add dedicated namespace combined with RBAC for better management/security;
+2. Add HPA (Horizontal Pod Scaler) to automatically size the cluster better bases on resources;
+3. Tweak node size to best fit Cassandra needs;
+4. Create custom Dockerfile to better fit needs;
+5. Fix health check error "readiness probe failed" by understanding why Cassandra causes K8s to fail and add maybe CRD or simular;
+6. Package all via helm or even kustomize;
    
    
    
