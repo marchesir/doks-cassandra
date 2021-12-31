@@ -92,7 +92,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
 # Conclusion
 There are many improvements required to make this more "production ready":
 1. Add dedicated namespace combined with RBAC for better management/security;
-2. Add HPA (Horizontal Pod AutoScaler) to automatically size the cluster better bases on resources;
+2. Add HPA (Horizontal Pod AutoScaler) to automatically size the cluster better based on resources;
 3. Tweak node size to best fit Cassandra needs;
 4. Create custom Dockerfile to better fit needs;
 5. Fix health check error "readiness probe failed" by understanding why Cassandra causes K8s to fail and add maybe CRD or simular;
