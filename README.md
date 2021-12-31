@@ -81,7 +81,13 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
     UN  10.244.1.163  84.81 KiB  32           66.1%             ae8b8cee-e403-4f90-be58-2ad52f221997  Rack1-Cassandra1<br/>
     UN  10.244.1.235  135 KiB    32           73.2%             b7b22f5b-f549-4f05-9c44-db9df44cd52c  Rack1-Cassandra1<br/>
    
-    Finally rerun scale command and set back to 2 and Pods will be reduced back to 2, in this case Cassandra will drain the data from the dieing Pod and push       it to the remianing live Pods.  Running kubectl get pv shows the persistent storage of the dead Pod is still present.
+    Finally rerun scale command and set back to 2 and Pods will be reduced back to 2, in this case Cassandra will drain the data from the dieing Pod and push       it to the remianing live Pods.  Running kubectl get pv shows the persistent storage of the dead Pod is still present as can be seen below<br/>
+    cassandra-0   1/1     Running   0          81m
+    cassandra-1   1/1     Running   0          80m
+   
+    As can be seen we are back to 2 pods, cassandra-2 has been deleted, below is the persistent disks and as can be seen cassandra-2 is still present<bt/> 
+    pvc-6f1047eb-485d-4390-8b65-b54382a248bc   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-0   fast                   
+    pvc-cc6578f7-b09e-4db3-aabb-d7a8a1919ebd   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-2   fast                       pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast                 
 
 # Conclusion
 There are many improvements required to make thsi more "production ready":
