@@ -11,16 +11,16 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
 5. K8s StorageClass with volumeBindingMode set to WaitForFirstConsumer needed for dynamic persistent storage used to map Cassandra data which guarantees data will be preserved when scaling up/down;
 
 # Setup
-1. Following default environment vars are set which can be overriden if needed:
-   export DO_REGION=ams3
-   export DO_SIZE=s-2vcpu-4gb (dont set any smaller)
-2. Set name of DOKS and access token as such:
-   export DOKS_NAME=myk8s
-   export DO_ACCESS_TOKEN=mytoken
-3. Make sure all .sh are executable:
+1. Following default environment vars are set which can be overriden if needed:<br>
+   export DO_REGION=ams3<br>
+   export DO_SIZE=s-2vcpu-4gb (dont set any smaller)<br>
+2. Set name of DOKS and access token as such:<br>
+   export DOKS_NAME=myk8s<br>
+   export DO_ACCESS_TOKEN=mytoken<br>
+3. Make sure all .sh are executable:<br>
    chmod +x *.sh <br/>
   
-   Run create script:
+   Run create script:<br>
    ./doks_create.sh (can take up to 10 mins)<br/> 
 4. Verify cluster with kubectl get nodes -o wide command and the nodes and there properties will be displayed, e.g.:
    k8scassandra-default-pool-u6zte  v1.21.5   10.110.0.3    164.92.220.139   containerd://1.4.11<br/>
