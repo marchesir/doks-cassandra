@@ -24,7 +24,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    ./doks_create.sh (can take up to 10 mins)<br/> 
 4. Verify cluster with kubectl get nodes -o wide command and the nodes and there properties will be displayed, e.g.:<br>
    k8scassandra-default-pool-u6zte  v1.21.5   10.110.0.3    164.92.220.139   containerd://1.4.11<br/>
-5. Fist lets install the K8s Cassandra service with kubectl apply -f cassandra-service.yml and verify with kubectl get service cassandra:<br/>
+5. First lets install the K8s Cassandra service with kubectl apply -f cassandra-service.yml and verify with kubectl get service cassandra:<br/>
    cassandra   ClusterIP   None         <none>        9042/TCP   43s<br/>
    Note: CLUSTER_IP and EXTERNAL_IP are all empty as this serivice is needed fro DNS loopkup by Cassandra.
 6. This step is very important as we need to create new SotrageClass and patch it so it becomes the default:
