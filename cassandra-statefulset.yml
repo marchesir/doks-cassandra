@@ -74,7 +74,6 @@ spec:
           timeoutSeconds: 5
   # These are converted to volume claims by the controller
   # and mounted at the paths mentioned above.
-  # do not use these in production until ssd GCEPersistentDisk or other ssd pd
   volumeClaimTemplates:
   - metadata:
       name: cassandra-data
