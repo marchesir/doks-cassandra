@@ -41,7 +41,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
     fast (default)     dobs.csi.digitalocean.com   Delete          WaitForFirstConsumer   true                   5m2s<br/>
 7. Now all components are installed leaving the Cassandra statefulset which includes the following: 
    1. Google docker image with Cassandra and required tools;
-   2. CPU/Memory limits of 0.25% CPI and 1Gb RAM;
+   2. CPU/Memory limits of 0.25% CPU and 1Gi RAM;
    3. Dynamic Persistent Storage to map Cassandra Data;
    4. Configuration of Cassandra DataCenter/Ring with 2 inital pods;
 8. Install with kubectl apply -f cassandra-statefulset.yml, this part can take sometime to spinup:
