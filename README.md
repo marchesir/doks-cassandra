@@ -50,10 +50,10 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    3. Next lets check the statefulset with kubectl get statefulset cassandra:<br/>
       cassandra   2/2     7m<br/>
    4. Now lets verify the pods with kubectl get pods:<br/>
-   cassandra-0   1/1     Running   0          8m11s<br/>
-   cassandra-1   1/1     Running   0          7m14s<br/>
+      cassandra-0   1/1     Running   0          8m11s<br/>
+      cassandra-1   1/1     Running   0          7m14s<br/>
    5. If desired the Cassandra raw logs can be tailed as such per pod:<br/>
-   kubectl logs -f cassandra-0
+      kubectl logs -f cassandra-0
 9. Verify Cassandra Cluster (DC/Ring) is running with following command on any Cassandra Node/Pod:<br/>
    kubectl exec -it cassandra-0 -- nodetool status    
    Datacenter: DC1-Cassandra1<br/>
@@ -72,8 +72,7 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
 10. Test scaling with the following command to go from 2 pods to 3:<br/>
     kubectl scale statefulsets cassandra --replicas=3
     
-    Verify with kubectl get pods or kubectl get statefulset cassandra and then verify Cassandra Cluster state with kubectl exec -it cassandra-0 -- nodetool     
-    status, show here below:<br/>
+    Verify with kubectl get pods or kubectl get statefulset cassandra and then verify Cassandra Cluster state with kubectl exec -it cassandra-0 --nodetool         status, show here below:<br/>
     cassandra   3/3     77m
     Datacenter: DC1-Cassandra1
     ==========================
