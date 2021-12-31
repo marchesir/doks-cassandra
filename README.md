@@ -87,17 +87,18 @@ To provide scalable HA (High Availability) Cassndra NoSQL K8s based the followin
    
     As can be seen we are back to 2 pods, cassandra-2 has been deleted, below is the persistent disks and as can be seen cassandra-2 is still present<br/> 
     pvc-6f1047eb-485d-4390-8b65-b54382a248bc   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-0   fast<br/>               
-    pvc-cc6578f7-b09e-4db3-aabb-d7a8a1919ebd   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-2   fast<br/>                   pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast<br/>                 
+    pvc-cc6578f7-b09e-4db3-aabb-d7a8a1919ebd   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-2   fast<br/>                   pvc-d9f6b30a-261c-46ac-b4d1-9953e043e4d0   1Gi        RWO            Delete           Bound    default/cassandra-data-cassandra-1   fast<br/>               11. To cleanup run ./doks_delete.sh  
 
 # Conclusion
-There are many improvements required to make thsi more "production ready":
+There are many improvements required to make this more "production ready":
 1. Add dedicated namespace combined with RBAC for better management/security;
-2. Add HPA (Horizontal Pod Scaler) to automatically size the cluster better bases on resources;
+2. Add HPA (Horizontal Pod AutoScaler) to automatically size the cluster better bases on resources;
 3. Tweak node size to best fit Cassandra needs;
 4. Create custom Dockerfile to better fit needs;
 5. Fix health check error "readiness probe failed" by understanding why Cassandra causes K8s to fail and add maybe CRD or simular;
-6. Package all via helm or even kustomize;
+6. Package all via helm or even kustomize as well as using Terraform/Pulumi for better infra automation;
 7. Add routing vai ingress or simular so Cassandra can be accessed externally with sifficent firewall rules or/and ingress/egress rules;
+
    
    
    
